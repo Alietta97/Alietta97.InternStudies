@@ -1,0 +1,8 @@
+property\Liste.class
+bean\LoginBean.class
+property\Koli.class
+property\DatabaseConnection.class
+bean\Items.class
+bean\InsertBean.class
+bean\UpdateBean.class
+property\PageController.class

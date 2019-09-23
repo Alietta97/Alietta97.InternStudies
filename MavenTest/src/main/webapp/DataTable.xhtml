@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>DATA TABLE</title>
+	<style>
+.bdy {
+	background-image: url("pictures/0.jpg");
+	background-repeat: repeat;
+	background-size: 1600px;
+	width: 1200px;
+}
+
+.btn {
+	color: WHITE;
+	width: 175px;
+	height: 70px;
+	background: BLUE;
+}
+
+.img_2 {
+	width: 500px;
+	height: 100px;
+	margin-top: 375px;
+	margin-left: 1000px; 
+	}
+
+.table {
+	margin-bottom: 20px;
+}
+</style>
+
+</h:head>
+
+<h:body styleClass="bdy">
+
+	<h:form>
+
+		<p:dataTable class="table" id="table" var="list"
+			value="#{updateBean.list}">
+			<p:column headerText="Product_ID">
+				<h:outputText value="#{list.id}" />
+			</p:column>
+
+			<p:column headerText="Product_Name">
+				<h:outputText value="#{list.name}" />
+			</p:column>
+
+			<p:column headerText="Product_Kind">
+				<h:outputText value="#{list.kind}" />
+			</p:column>
+
+			<p:column headerText="Product_Quantity">
+				<h:outputText value="#{list.quantity}" />
+			</p:column>
+
+			<p:column headerText="Product_Spot">
+				<h:outputText value="#{list.spot}" />
+			</p:column>
+
+
+		</p:dataTable>
+		<h:commandButton action="#{pageController.processProductInsert}"
+			actionListener="#{updateBean.list.clear}" class="btn"
+			value="GO BACK Insert Page" />
+
+
+	</h:form>
+	
+</h:body>
+
+<h:graphicImage class="img_2" value="/pictures/Resim2.png" />
+</html>

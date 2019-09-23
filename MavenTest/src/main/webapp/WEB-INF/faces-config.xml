@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+	<navigation-rule>
+		<from-view-id>/ProductInsert.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>wellcomepage</from-outcome>
+			<to-view-id>/wellcomepage.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>DataTable</from-outcome>
+			<to-view-id>/DataTable.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/wellcomepage.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>ProductInsert</from-outcome>
+			<to-view-id>/ProductInsert.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>warning</from-outcome>
+			<to-view-id>/Warning.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/DataTable.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>wellcomepage</from-outcome>
+			<to-view-id>/wellcomepage.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>ProductInsert</from-outcome>
+			<to-view-id>/ProductInsert.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/Warning.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>wellcomepage</from-outcome>
+			<to-view-id>/wellcomepage.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+</faces-config>
+	
+
+
+

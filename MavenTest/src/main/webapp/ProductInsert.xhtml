@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Product Insert</title>
+	<style>
+.label{
+	color: white;
+	font-variant: small-caps;
+	font-family: cursive;
+}
+.bdy {
+	background-image: url("pictures/1.jpg");
+	background-repeat: no-repeat;
+	width: 1000px;
+	height: 600px;
+}
+
+.btn {
+	color: WHITE;
+	width: 100px;
+	height: 50px;
+	background: blue;
+	position: absolute;
+}
+
+.img_2 {
+	width: 500px;
+	height: 100px;
+	margin-top: 425px;
+	margin-left: 1000px;
+}
+
+.panel {
+	width: 400px;
+	height: 225px;
+	background: black;
+	margin-bottom: 20px;
+}
+</style>
+</h:head>
+<h:body styleClass="bdy">
+
+	<h:form>
+		<p:panel id="insertpanel" header="Wellcome Crud Operations Page"
+			class="panel">
+			<h:panelGrid columns="2" cellpadding="5" id="add">
+				<p:outputLabel class="label" for="productname" value="Product Name: " />
+				<p:inputMask id="productname" value="#{koli.product_name}" />
+
+				<p:outputLabel class="label" for="productKind" value="Product Kind: " />
+				<p:inputMask id="productKind" value="#{koli.product_kind}" />
+				<p:commandButton value="Reset" type="reset" />
+				<p:commandButton value="Insert" action="#{insertBean.add(koli)}" />
+			</h:panelGrid>
+		</p:panel>
+	</h:form>
+
+	<h:form>
+		<h:commandButton action="#{pageController.processWellcomepage}"
+			class="btn" style="background:red; left:250px;" value="EXIT" />
+
+		<h:commandButton for="act" action="#{pageController.processDataTable}"
+			actionListener="#{updateBean.update}" update="list" class="btn"
+			value="Kayıt Listesi" />
+	</h:form>
+	
+</h:body>
+
+<h:graphicImage class="img_2" value="/pictures/Resim2.png" />
+
+
+</html>
+
+
+

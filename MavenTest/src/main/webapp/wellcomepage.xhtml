@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Wellcomepage!!</title>
+	<style>
+.label {
+	color: white;
+	font-size-adjust: inherit;
+	font-variant: small-caps;
+	font-family: cursive;
+	position: static;
+}
+
+.bdy {
+	background-image: url("pictures/3.jpg");
+	background-repeat: no-repeat;
+}
+
+.btn {
+	width: 100px;
+	height: 50px;
+	background: RED;
+}
+
+.panel {
+	width: 650px;
+	height: 175px;
+	background: black;
+	margin-bottom: 20px;
+}
+
+.img {
+	position: absolute;
+	top: 53px;
+	left: 370px;
+	width: 250px;
+	height: 125px;
+	border: highlight;
+	border-style: double;
+}
+
+.img_2 {
+	width: 500px;
+	height: 100px;
+	margin-top: 425px;
+	margin-left: 1000px;
+}
+</style>
+
+</h:head>
+
+
+<h:body styleClass="bdy">
+
+
+	<h:form>
+		<p:growl id="mesaj" life="1000" />
+
+		<h:graphicImage class="img" value="/pictures/atkafasimaskesi.jpg" />
+
+		<p:panel id="loginpanel" header="Login" class="panel">
+			<h:panelGrid columns="1" cellpadding="1">
+
+				<p:outputLabel class="label" for="userName" value="User name: " />
+				<p:inputText id="userName" required="true" value="#{loginBean.user}" />
+
+				<p:outputLabel class="label" for="password" value="password: " />
+				<p:password id="password" required="true"
+					value="#{loginBean.password}" />
+
+			</h:panelGrid>
+		</p:panel>
+		<p:commandButton id="loginButton" value="Login"
+			action="#{loginBean.login}" actionListener="#{loginBean.mesajVer}" />
+	</h:form>
+
+</h:body>
+
+<h:graphicImage class="img_2" value="/pictures/Resim2.png" />
+
+</html>

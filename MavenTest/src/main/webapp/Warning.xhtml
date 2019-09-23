@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Wrong login information</title>
+	<style>
+.bdy {
+	background-image: url("pictures/1.jpg");
+	background-repeat: no-repeat;
+	width: 1000px;
+	height: 600px;
+}
+.panel{
+	width: 400px;
+	height: 80px;
+	background: YELLOW;
+	margin-bottom: 20px;
+}
+.s {
+	margin:25px;
+	color: black;
+	font-size: x-large;
+	padding: 5px;
+}
+.btn {
+	color: navy;
+	border: medium;
+	border-style: groove;
+	font: fantasy;
+	font-size: x-large;
+	position: absolute;
+}
+.img_2 {
+	width: 500px;
+	height: 100px;
+	margin-top: 425px;
+	margin-left: 1000px;
+}
+</style>
+
+</h:head>
+<h:body styleClass="bdy">
+	<br />
+	<br />
+	<br />
+	<p:panel id="panel" header="Information" class="panel">
+		<h:outputLabel class="s">Wrong Login Information!!</h:outputLabel>
+	</p:panel>
+	
+	<h:form>
+		<h:commandButton action="#{pageController.processWellcomepage}"
+			class="btn" value="go back!" />
+	</h:form>
+	
+</h:body>
+<h:graphicImage class="img_2" value="/pictures/Resim2.png" />
+</html>
