@@ -6,6 +6,9 @@
 <h:head>
 	<title>Wellcomepage!!</title>
 	<style>
+.loginbutton{
+	margin-top: 20px;
+}
 .label {
 	color: white;
 	font-size-adjust: inherit;
@@ -27,19 +30,17 @@
 
 .panel {
 	width: 650px;
-	height: 175px;
+	height: 250px;
 	background: black;
 	margin-bottom: 20px;
 }
 
 .img {
 	position: absolute;
-	top: 53px;
-	left: 370px;
-	width: 250px;
-	height: 125px;
-	border: highlight;
-	border-style: double;
+	top: 50px;
+	left: 330px;
+	width: 300px;
+	height: 175px;
 }
 
 .img_2 {
@@ -49,36 +50,22 @@
 	margin-left: 1000px;
 }
 </style>
-
 </h:head>
-
-
 <h:body styleClass="bdy">
-
-
 	<h:form>
-		<p:growl id="mesaj" life="1000" />
-
-		<h:graphicImage class="img" value="/pictures/atkafasimaskesi.jpg" />
-
+		<h:graphicImage class="img" value="/pictures/logo.png" />
 		<p:panel id="loginpanel" header="Login" class="panel">
 			<h:panelGrid columns="1" cellpadding="1">
-
 				<p:outputLabel class="label" for="userName" value="User name: " />
 				<p:inputText id="userName" required="true" value="#{loginBean.user}" />
 
 				<p:outputLabel class="label" for="password" value="password: " />
-				<p:password id="password" required="true"
-					value="#{loginBean.password}" />
-
+				<p:password id="password" required="true" value="#{loginBean.password}" />
 			</h:panelGrid>
+				<p:commandButton id="loginButton" value="Login" class="loginbutton"
+			action="#{loginBean.login}"/>
 		</p:panel>
-		<p:commandButton id="loginButton" value="Login"
-			action="#{loginBean.login}" actionListener="#{loginBean.mesajVer}" />
 	</h:form>
-
 </h:body>
-
 <h:graphicImage class="img_2" value="/pictures/Resim2.png" />
-
 </html>

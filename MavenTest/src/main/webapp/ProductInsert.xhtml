@@ -7,11 +7,12 @@
 <h:head>
 	<title>Product Insert</title>
 	<style>
-.label{
+.label {
 	color: white;
 	font-variant: small-caps;
 	font-family: cursive;
 }
+
 .bdy {
 	background-image: url("pictures/1.jpg");
 	background-repeat: no-repeat;
@@ -36,29 +37,46 @@
 
 .panel {
 	width: 400px;
-	height: 225px;
+	height: 300px;
 	background: black;
 	margin-bottom: 20px;
 }
 </style>
 </h:head>
 <h:body styleClass="bdy">
-
 	<h:form>
+		<p:growl id="growl" life="2000" showDetail="true" />
 		<p:panel id="insertpanel" header="Wellcome Crud Operations Page"
 			class="panel">
 			<h:panelGrid columns="2" cellpadding="5" id="add">
-				<p:outputLabel class="label" for="productname" value="Product Name: " />
-				<p:inputMask id="productname" value="#{koli.product_name}" />
+				<p:outputLabel class="label" for="productname"
+					value="Product Name: " />
+				<p:inputMask id="productname" value="#{koli.product_name}">
+					<f:validateLength minimum="4" />
+				</p:inputMask>
 
-				<p:outputLabel class="label" for="productKind" value="Product Kind: " />
-				<p:inputMask id="productKind" value="#{koli.product_kind}" />
-				<p:commandButton value="Reset" type="reset" />
-				<p:commandButton value="Insert" action="#{insertBean.add(koli)}" />
+				<p:outputLabel class="label" for="productKind"
+					value="Product Kind: " />
+				<h:selectOneMenu id="productKind" value="#{koli.product_kind}"
+					required="true" label="ProductKind">
+					<f:selectItem id="default" itemLabel="Select One" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItem itemLabel="koli" itemValue="koli" />
+					<f:selectItem itemLabel="hammadde" itemValue="hammadde" />
+					<f:selectItem itemLabel="ürün" itemValue="ürün" />
+				</h:selectOneMenu>
+
+				<p:outputLabel class="label" for="productQuantity"
+					value="Product Quantity: " />
+				<p:spinner id="productQuantity" min="1" stepFactor="10"
+					value="#{koli.product_quantity}" />
 			</h:panelGrid>
+			<p:commandButton value="Insert" action="#{insertBean.add(koli)}"
+				update="@form" style="margin-left:20px; margin-top:10px;" />
+			<p:commandButton value="Delete Table" action="#{deleteBean.delete}"
+				update="@form" style="margin-left:20px; margin-top:10px;" />
 		</p:panel>
 	</h:form>
-
 	<h:form>
 		<h:commandButton action="#{pageController.processWellcomepage}"
 			class="btn" style="background:red; left:250px;" value="EXIT" />
@@ -67,12 +85,8 @@
 			actionListener="#{updateBean.update}" update="list" class="btn"
 			value="Kayıt Listesi" />
 	</h:form>
-	
 </h:body>
-
 <h:graphicImage class="img_2" value="/pictures/Resim2.png" />
-
-
 </html>
 
 

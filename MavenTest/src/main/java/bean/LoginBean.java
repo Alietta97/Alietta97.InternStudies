@@ -6,11 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
-import javax.faces.context.FacesContext;
-import javax.faces.event.ActionEvent;
-
 import property.DatabaseConnection;
 
 @ManagedBean(name = "loginBean")
@@ -20,6 +16,7 @@ public class LoginBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String user;
 	private String password;
+	
 
 	public static Statement stmt = null;
 
@@ -69,22 +66,6 @@ public class LoginBean implements Serializable {
 
 		return "warning";
 	}
-	
-	
-	public void mesajVer(ActionEvent e) {
-		String buttonId = e.getComponent().getId();
-		System.out.println(buttonId);
-		if (buttonId.equals("loginButton")) {
-			FacesMessage mesaj = new FacesMessage(FacesMessage.SEVERITY_INFO, "Logging in...", null);
-			FacesContext.getCurrentInstance().addMessage(null, mesaj);
-			
-		} else {
-			FacesMessage mesaj = new FacesMessage(FacesMessage.SEVERITY_INFO, "Cannot Loging in...", null);
-			FacesContext.getCurrentInstance().addMessage(null, mesaj);
-			
-		}
-	}
-	
 	
 
 	public String getUser() {

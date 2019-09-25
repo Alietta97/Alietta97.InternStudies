@@ -29,7 +29,7 @@ public class UpdateBean implements Serializable {
 		try {
 
 			stmt = DatabaseConnection.connect().createStatement();
-
+			
 			String sql = "SELECT * FROM STORAGE";
 			PreparedStatement state = DatabaseConnection.connect().prepareStatement(sql);
 			state.executeQuery();

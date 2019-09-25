@@ -2,20 +2,19 @@ package property;
 
 import java.io.Serializable;
 
-import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 import bean.Items;
 
-
-@ManagedBean(name="koli")
-@RequestScoped
+@ManagedBean(name = "koli")
+@SessionScoped
 
 public class Koli extends Items implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private String product_kind = "koli";
-	private int product_spot = 10;
-	private int product_quantity = 5000;
+	private String product_kind;
+	private int product_spot = 1;
+	private int product_quantity;
 
 	public Koli() {
 		super();

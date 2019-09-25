@@ -6,13 +6,17 @@
 	<navigation-rule>
 		<from-view-id>/ProductInsert.xhtml</from-view-id>
 		<navigation-case>
-			<from-outcome>wellcomepage</from-outcome>
-			<to-view-id>/wellcomepage.xhtml</to-view-id>
-			<redirect />
+			<from-outcome>a</from-outcome>
+			<to-view-id>/ProductInsert.xhtml</to-view-id>
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>DataTable</from-outcome>
 			<to-view-id>/DataTable.xhtml</to-view-id>
+			<redirect include-view-params="true" />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>wellcomepage</from-outcome>
+			<to-view-id>/wellcomepage.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
